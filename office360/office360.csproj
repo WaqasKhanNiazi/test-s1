@@ -1,0 +1,1753 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5330993A-ECE1-4309-B8C6-8B496CC697D4}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>office360</RootNamespace>
+    <AssemblyName>office360</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44368</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>4.3</TypeScriptToolsVersion>
+    <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
+    <DockerLaunchUrl>http://{ServiceIPAddress}</DockerLaunchUrl>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AspNet.ScriptManager.jQuery.UI.Combined, Version=1.12.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.UI.Combined.1.12.1\lib\net45\AspNet.ScriptManager.jQuery.UI.Combined.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ClosedXML, Version=0.102.1.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.102.1\lib\netstandard2.0\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DocumentFormat.OpenXml, Version=2.16.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.16.0\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.1.0.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelNumberFormat.1.1.0\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="Grpc.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d754f35622e28bad, processorArchitecture=MSIL">
+      <HintPath>..\packages\Grpc.Core.2.46.6\lib\net45\Grpc.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Grpc.Core.Api, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d754f35622e28bad, processorArchitecture=MSIL">
+      <HintPath>..\packages\Grpc.Core.Api.2.46.6\lib\net45\Grpc.Core.Api.dll</HintPath>
+    </Reference>
+    <Reference Include="Irony, Version=1.0.11.0, Culture=neutral, PublicKeyToken=ca48ace7223ead47, processorArchitecture=MSIL">
+      <HintPath>..\packages\Irony.NetCore.1.0.11\lib\net461\Irony.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Features, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.Features.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Features.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.Primitives, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1537.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1537.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1537.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1537.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1537.0\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1537.0\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="ReportViewerForMvc, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ReportViewerForMvc4.1.1.2\lib\net40\ReportViewerForMvc.dll</HintPath>
+    </Reference>
+    <Reference Include="SixLabors.Fonts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
+      <HintPath>..\packages\SixLabors.Fonts.1.0.0\lib\netstandard2.0\SixLabors.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Packaging.6.0.0\lib\net461\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Extensions, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.Extensions.4.3.1\lib\net462\System.Runtime.Extensions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.5.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.RegularExpressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.RegularExpressions.4.3.1\lib\net463\System.Text.RegularExpressions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="XLParser, Version=1.5.2.0, Culture=neutral, PublicKeyToken=63397e1e46bb91b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\XLParser.1.5.2\lib\net461\XLParser.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\ABilling\ABillingAreaRegistration.cs" />
+    <Compile Include="Areas\ABilling\Controllers\VendorUIController.cs" />
+    <Compile Include="Areas\AUsers\AUsersAreaRegistration.cs" />
+    <Compile Include="Areas\AUsers\Controllers\AuthenticationController.cs" />
+    <Compile Include="Common\CommonHelper\ReportsUttility.cs" />
+    <Compile Include="Common\DataBaseProcedures\AAccounts\CheckDuplicateRecord.cs" />
+    <Compile Include="Common\DataBaseProcedures\AAccounts\GetDataFromDB.cs" />
+    <Compile Include="Common\DataBaseProcedures\AAccounts\InsertIntoDB.cs" />
+    <Compile Include="Common\DataBaseProcedures\ABranches\GetDataFromDB.cs" />
+    <Compile Include="Common\DataBaseProcedures\ABranches\InsertIntoDB.cs" />
+    <Compile Include="Common\CommonHelper\GetAllListFromDB.cs" />
+    <Compile Include="Common\CommonHelper\LogInAuthentication.cs" />
+    <Compile Include="Common\CommonHelper\SessionAuthenticator.cs" />
+    <Compile Include="Common\CommonHelper\Uttility.cs" />
+    <Compile Include="Common\DataBaseProcedures\Reports\Reports.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MarkUpController.cs" />
+    <Compile Include="Extensions\ObjectExtensions.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\AccFeeChallan.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\AccFeeChallanDetail.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\AccFeeStructure.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\AccFeeStructureDetail.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\AccFeeStructureDetails_Rp_GetByParam_Result.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\AccFeeStructure_GetDetailsByParam_Result.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\AccFeeStructure_Rp_GetByParam_Result.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\AccJournal.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\AccLedgerFee.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\AccStudentOB.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\AppClass.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\AppClassRegistration.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\AppClass_GetListByParam_Result.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\AppSession.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\AppStudent.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\BillingMethods.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\CampusTypes.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\ChallanMethods.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\ChargingMethods.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\City.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\CoaCatagories.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\CoaTypes.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\Country.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\DocType.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\DocumentStatus.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\EducationBoard.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\EnrollmentTypes.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\fn_CodeSplitByCommaAsUniqueIdentifier_Result.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\fn_GetCommaSepratedValuesInList_Result.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\Gender.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\GeneralBranch.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\GeneralBranchSetting.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\GeneralCompany.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\GeneralCompanyModule.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\GeneralCompanyModule_GetDetailByParam_Result.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\GeneralCompanySetting.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\GeneralCompanySetting_GetDetailByParam_Result.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\GeneralCompany_GetDetailById_Result.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\GeneralEmailSetting.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\GeneralEmailSetting_GetDetailByParam_Result.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\GeneralEnrollmentSetting.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\GeneralEnrollmentSetting_GetDetailsByParam_Result.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\GeneralRightSetting.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\GeneralRightSetting_GetByParam_Result.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\GeneralUser.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\GeneralUserRight.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\GeneralUser_GetDetailByParameter_Result.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\MartialStatus.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\Occupations.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\OrganizationType.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\RegistrationTypes.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\Relationships.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\Religions.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\Rights.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\Roles.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\SESModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SESModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\SESModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\SESModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SESModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\SideMenu.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\SideMenu_GetList_Result.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\StructureCOAAccounts.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\StructureFeeType.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\StudyGroups.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\StudyLevel.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\URLTypes.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\Vendors.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDMX\WorkingShifts.cs">
+      <DependentUpon>SESModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\General\Constants.cs" />
+    <Compile Include="Models\General\DocumentStatus.cs" />
+    <Compile Include="Models\General\ASPManagRoles.cs" />
+    <Compile Include="Models\General\ListConditionsForDB.cs" />
+    <Compile Include="Models\General\RightsGUID.cs" />
+    <Compile Include="Models\General\HttpStatus.cs" />
+    <Compile Include="Models\General\Paramters.cs" />
+    <Compile Include="Models\General\Urls.cs" />
+    <Compile Include="Models\General\Session.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\ABilling\NewVendor_FE.js" />
+    <Content Include="Areas\ABilling\Views\VendorUI\NewVendor_FE.js" />
+    <Content Include="Areas\AUsers\RightList.js" />
+    <Content Include="bin\Antlr3.Runtime.dll" />
+    <Content Include="bin\Antlr3.Runtime.pdb" />
+    <Content Include="bin\AspNet.ScriptManager.jQuery.UI.Combined.dll" />
+    <Content Include="bin\de\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\de\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\de\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\de\Microsoft.ReportViewer.WebDesign.resources.dll" />
+    <Content Include="bin\de\Microsoft.ReportViewer.WebForms.resources.dll" />
+    <Content Include="bin\de\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\EntityFramework.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.xml" />
+    <Content Include="bin\EntityFramework.xml" />
+    <Content Include="bin\EnvDTE.dll" />
+    <Content Include="bin\EnvDTE80.dll" />
+    <Content Include="bin\es\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\es\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\es\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\es\Microsoft.ReportViewer.WebDesign.resources.dll" />
+    <Content Include="bin\es\Microsoft.ReportViewer.WebForms.resources.dll" />
+    <Content Include="bin\es\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\fr\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\fr\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\fr\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\fr\Microsoft.ReportViewer.WebDesign.resources.dll" />
+    <Content Include="bin\fr\Microsoft.ReportViewer.WebForms.resources.dll" />
+    <Content Include="bin\fr\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\it\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\it\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\it\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\it\Microsoft.ReportViewer.WebDesign.resources.dll" />
+    <Content Include="bin\it\Microsoft.ReportViewer.WebForms.resources.dll" />
+    <Content Include="bin\it\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\ja\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\ja\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\ja\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\ja\Microsoft.ReportViewer.WebDesign.resources.dll" />
+    <Content Include="bin\ja\Microsoft.ReportViewer.WebForms.resources.dll" />
+    <Content Include="bin\ja\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\ko\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\ko\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\ko\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\ko\Microsoft.ReportViewer.WebDesign.resources.dll" />
+    <Content Include="bin\ko\Microsoft.ReportViewer.WebForms.resources.dll" />
+    <Content Include="bin\ko\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\Microsoft.Build.Framework.dll" />
+    <Content Include="bin\Microsoft.Build.Tasks.Core.dll" />
+    <Content Include="bin\Microsoft.Build.Utilities.Core.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+    <Content Include="bin\Microsoft.MSXML.dll" />
+    <Content Include="bin\Microsoft.ReportViewer.Common.dll" />
+    <Content Include="bin\Microsoft.ReportViewer.DataVisualization.dll" />
+    <Content Include="bin\Microsoft.ReportViewer.Design.dll" />
+    <Content Include="bin\Microsoft.ReportViewer.ProcessingObjectModel.dll" />
+    <Content Include="bin\Microsoft.ReportViewer.WebDesign.dll" />
+    <Content Include="bin\Microsoft.ReportViewer.WebForms.dll" />
+    <Content Include="bin\Microsoft.ReportViewer.WinForms.dll" />
+    <Content Include="bin\Microsoft.SqlServer.Types.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.ComponentModelHost.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.Data.Core.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.Data.Services.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.Debugger.Interop.11.0.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.Debugger.InteropA.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.GraphModel.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.ManagedInterfaces.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.OLE.Interop.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.ProjectAggregator.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.Shell.Interop.10.0.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.Shell.Interop.11.0.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.Shell.Interop.8.0.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.Shell.Interop.9.0.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.Shell.Interop.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.TemplateWizardInterface.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.TemplateWizardInterface.xml" />
+    <Content Include="bin\Microsoft.VisualStudio.TextManager.Interop.10.0.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.TextManager.Interop.8.0.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.TextManager.Interop.dll" />
+    <Content Include="bin\Microsoft.VisualStudio.VSHelp.dll" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Newtonsoft.Json.xml" />
+    <Content Include="bin\office360.dll" />
+    <Content Include="bin\office360.pdb" />
+    <Content Include="bin\pt\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\pt\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\pt\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\pt\Microsoft.ReportViewer.WebDesign.resources.dll" />
+    <Content Include="bin\pt\Microsoft.ReportViewer.WebForms.resources.dll" />
+    <Content Include="bin\pt\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\ReportViewerForMvc.dll" />
+    <Content Include="bin\roslyn\csc.exe" />
+    <Content Include="bin\roslyn\csi.exe" />
+    <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll" />
+    <Content Include="bin\roslyn\Microsoft.Win32.Primitives.dll" />
+    <Content Include="bin\roslyn\System.AppContext.dll" />
+    <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
+    <Content Include="bin\roslyn\System.Console.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.DiagnosticSource.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.FileVersionInfo.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.StackTrace.dll" />
+    <Content Include="bin\roslyn\System.Globalization.Calendars.dll" />
+    <Content Include="bin\roslyn\System.IO.Compression.dll" />
+    <Content Include="bin\roslyn\System.IO.Compression.ZipFile.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.Primitives.dll" />
+    <Content Include="bin\roslyn\System.Net.Http.dll" />
+    <Content Include="bin\roslyn\System.Net.Sockets.dll" />
+    <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
+    <Content Include="bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Algorithms.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Encoding.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Primitives.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.X509Certificates.dll" />
+    <Content Include="bin\roslyn\System.Text.Encoding.CodePages.dll" />
+    <Content Include="bin\roslyn\System.Threading.Tasks.Extensions.dll" />
+    <Content Include="bin\roslyn\System.ValueTuple.dll" />
+    <Content Include="bin\roslyn\System.Xml.ReaderWriter.dll" />
+    <Content Include="bin\roslyn\System.Xml.XmlDocument.dll" />
+    <Content Include="bin\roslyn\System.Xml.XPath.dll" />
+    <Content Include="bin\roslyn\System.Xml.XPath.XDocument.dll" />
+    <Content Include="bin\roslyn\vbc.exe" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe" />
+    <Content Include="bin\ru\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\ru\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\ru\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\ru\Microsoft.ReportViewer.WebDesign.resources.dll" />
+    <Content Include="bin\ru\Microsoft.ReportViewer.WebForms.resources.dll" />
+    <Content Include="bin\ru\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\SqlServerTypes\x64\msvcr120.dll" />
+    <Content Include="bin\SqlServerTypes\x64\SqlServerSpatial140.dll" />
+    <Content Include="bin\SqlServerTypes\x86\msvcr120.dll" />
+    <Content Include="bin\SqlServerTypes\x86\SqlServerSpatial140.dll" />
+    <Content Include="bin\stdole.dll" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Helpers.xml" />
+    <Content Include="bin\System.Web.Mvc.dll" />
+    <Content Include="bin\System.Web.Mvc.xml" />
+    <Content Include="bin\System.Web.Optimization.dll" />
+    <Content Include="bin\System.Web.Optimization.xml" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\System.Web.WebPages.Deployment.xml" />
+    <Content Include="bin\System.Web.WebPages.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.xml" />
+    <Content Include="bin\VSLangProj.dll" />
+    <Content Include="bin\VSLangProj2.dll" />
+    <Content Include="bin\VSLangProj80.dll" />
+    <Content Include="bin\WebGrease.dll" />
+    <Content Include="bin\zh-CHS\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\zh-CHS\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\zh-CHS\Microsoft.ReportViewer.WebDesign.resources.dll" />
+    <Content Include="bin\zh-CHS\Microsoft.ReportViewer.WebForms.resources.dll" />
+    <Content Include="bin\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\zh-CHT\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\zh-CHT\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\zh-CHT\Microsoft.ReportViewer.WebDesign.resources.dll" />
+    <Content Include="bin\zh-CHT\Microsoft.ReportViewer.WebForms.resources.dll" />
+    <Content Include="bin\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="Buttons-2.3.4\css\buttons.bootstrap.css" />
+    <Content Include="Buttons-2.3.4\css\buttons.bootstrap.min.css" />
+    <Content Include="Buttons-2.3.4\css\buttons.bootstrap4.css" />
+    <Content Include="Buttons-2.3.4\css\buttons.bootstrap4.min.css" />
+    <Content Include="Buttons-2.3.4\css\buttons.bootstrap5.css" />
+    <Content Include="Buttons-2.3.4\css\buttons.bootstrap5.min.css" />
+    <Content Include="Buttons-2.3.4\css\buttons.bulma.css" />
+    <Content Include="Buttons-2.3.4\css\buttons.bulma.min.css" />
+    <Content Include="Buttons-2.3.4\css\buttons.dataTables.css" />
+    <Content Include="Buttons-2.3.4\css\buttons.dataTables.min.css" />
+    <Content Include="Buttons-2.3.4\css\buttons.foundation.css" />
+    <Content Include="Buttons-2.3.4\css\buttons.foundation.min.css" />
+    <Content Include="Buttons-2.3.4\css\buttons.jqueryui.css" />
+    <Content Include="Buttons-2.3.4\css\buttons.jqueryui.min.css" />
+    <Content Include="Buttons-2.3.4\css\buttons.semanticui.css" />
+    <Content Include="Buttons-2.3.4\css\buttons.semanticui.min.css" />
+    <Content Include="Buttons-2.3.4\js\buttons.bootstrap.js" />
+    <Content Include="Buttons-2.3.4\js\buttons.bootstrap.min.js" />
+    <Content Include="Buttons-2.3.4\js\buttons.bootstrap4.js" />
+    <Content Include="Buttons-2.3.4\js\buttons.bootstrap4.min.js" />
+    <Content Include="Buttons-2.3.4\js\buttons.bootstrap5.js" />
+    <Content Include="Buttons-2.3.4\js\buttons.bootstrap5.min.js" />
+    <Content Include="Buttons-2.3.4\js\buttons.bulma.js" />
+    <Content Include="Buttons-2.3.4\js\buttons.bulma.min.js" />
+    <Content Include="Buttons-2.3.4\js\buttons.colVis.js" />
+    <Content Include="Buttons-2.3.4\js\buttons.colVis.min.js" />
+    <Content Include="Buttons-2.3.4\js\buttons.dataTables.js" />
+    <Content Include="Buttons-2.3.4\js\buttons.dataTables.min.js" />
+    <Content Include="Buttons-2.3.4\js\buttons.foundation.js" />
+    <Content Include="Buttons-2.3.4\js\buttons.foundation.min.js" />
+    <Content Include="Buttons-2.3.4\js\buttons.html5.js" />
+    <Content Include="Buttons-2.3.4\js\buttons.html5.min.js" />
+    <Content Include="Buttons-2.3.4\js\buttons.jqueryui.js" />
+    <Content Include="Buttons-2.3.4\js\buttons.jqueryui.min.js" />
+    <Content Include="Buttons-2.3.4\js\buttons.print.js" />
+    <Content Include="Buttons-2.3.4\js\buttons.print.min.js" />
+    <Content Include="Buttons-2.3.4\js\buttons.semanticui.js" />
+    <Content Include="Buttons-2.3.4\js\buttons.semanticui.min.js" />
+    <Content Include="Buttons-2.3.4\js\dataTables.buttons.js" />
+    <Content Include="Buttons-2.3.4\js\dataTables.buttons.min.js" />
+    <Content Include="Common\CommonScripts\ServerEnd.js" />
+    <Content Include="Common\CommonScripts\Uttility.js" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.bundle.js" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Common\CommonScripts\SideBarMenu.js" />
+    <Content Include="Models\EDMX\SESModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SESModel.edmx</DependentUpon>
+      <LastGenOutput>SESModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\EDMX\SESModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SESModel.edmx</DependentUpon>
+      <LastGenOutput>SESModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
+    <Content Include="Scripts\jquery.dataTables.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="SiteAssets\Uttility\Uttility.css" />
+    <Content Include="SiteScripts\AAccounts\AccListViewer\ListAccFeeStructure.js" />
+    <Content Include="SiteScripts\AAccounts\FeeChallanUI\CreateNewAccFeeChallan.js" />
+    <Content Include="SiteScripts\ABranches\CreateNewEnrollment\CreateNewEnrollment.js" />
+    <Content Include="SiteScripts\ABranches\SessionsUI\CreateNewAppSession.js" />
+    <Content Include="SiteScripts\ABranches\BranchUI\CreateNewGeneralBranch.js" />
+    <Content Include="SiteScripts\ABranches\ClassUI\CreateNewAppClass.js" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Theme\assets\css\apps\contacts.css" />
+    <Content Include="Theme\assets\css\apps\invoice.css" />
+    <Content Include="Theme\assets\css\apps\mailbox.css" />
+    <Content Include="Theme\assets\css\apps\mailing-chat.css" />
+    <Content Include="Theme\assets\css\apps\notes.css" />
+    <Content Include="Theme\assets\css\apps\scrumboard.css" />
+    <Content Include="Theme\assets\css\apps\todolist.css" />
+    <Content Include="Theme\assets\css\authentication\form-1.css" />
+    <Content Include="Theme\assets\css\authentication\form-2.css" />
+    <Content Include="Theme\assets\css\components\cards\card.css" />
+    <Content Include="Theme\assets\css\components\custom-carousel.css" />
+    <Content Include="Theme\assets\css\components\custom-countdown.css" />
+    <Content Include="Theme\assets\css\components\custom-counter.css" />
+    <Content Include="Theme\assets\css\components\custom-list-group.css" />
+    <Content Include="Theme\assets\css\components\custom-media_object.css" />
+    <Content Include="Theme\assets\css\components\custom-modal.css" />
+    <Content Include="Theme\assets\css\components\custom-sweetalert.css" />
+    <Content Include="Theme\assets\css\components\tabs-accordian\custom-accordions.css" />
+    <Content Include="Theme\assets\css\components\tabs-accordian\custom-tabs.css" />
+    <Content Include="Theme\assets\css\components\timeline\custom-timeline.css" />
+    <Content Include="Theme\assets\css\dashboard\dash_1.css" />
+    <Content Include="Theme\assets\css\dashboard\dash_2.css" />
+    <Content Include="Theme\assets\css\elements\alert.css" />
+    <Content Include="Theme\assets\css\elements\avatar.css" />
+    <Content Include="Theme\assets\css\elements\breadcrumb.css" />
+    <Content Include="Theme\assets\css\elements\color_library.css" />
+    <Content Include="Theme\assets\css\elements\custom-pagination.css" />
+    <Content Include="Theme\assets\css\elements\custom-tree_view.css" />
+    <Content Include="Theme\assets\css\elements\custom-typography.css" />
+    <Content Include="Theme\assets\css\elements\infobox.css" />
+    <Content Include="Theme\assets\css\elements\miscellaneous.css" />
+    <Content Include="Theme\assets\css\elements\popover.css" />
+    <Content Include="Theme\assets\css\elements\search.css" />
+    <Content Include="Theme\assets\css\elements\tooltip.css" />
+    <Content Include="Theme\assets\css\forms\bootstrap-form.css" />
+    <Content Include="Theme\assets\css\forms\custom-clipboard.css" />
+    <Content Include="Theme\assets\css\forms\switches.css" />
+    <Content Include="Theme\assets\css\forms\theme-checkbox-radio.css" />
+    <Content Include="Theme\assets\css\loader.css" />
+    <Content Include="Theme\assets\css\main.css" />
+    <Content Include="Theme\assets\css\pages\coming-soon\style.css" />
+    <Content Include="Theme\assets\css\pages\contact_us.css" />
+    <Content Include="Theme\assets\css\pages\error\style-400.css" />
+    <Content Include="Theme\assets\css\pages\error\style-500.css" />
+    <Content Include="Theme\assets\css\pages\error\style-503.css" />
+    <Content Include="Theme\assets\css\pages\error\style-maintanence.css" />
+    <Content Include="Theme\assets\css\pages\faq\faq.css" />
+    <Content Include="Theme\assets\css\pages\faq\faq2.css" />
+    <Content Include="Theme\assets\css\pages\helpdesk.css" />
+    <Content Include="Theme\assets\css\pages\privacy\privacy.css" />
+    <Content Include="Theme\assets\css\plugins.css" />
+    <Content Include="Theme\assets\css\scrollspyNav.css" />
+    <Content Include="Theme\assets\css\structure.css" />
+    <Content Include="Theme\assets\css\tables\table-basic.css" />
+    <Content Include="Theme\assets\css\users\account-setting.css" />
+    <Content Include="Theme\assets\css\users\user-profile.css" />
+    <Content Include="Theme\assets\css\widgets\modules-widgets.css" />
+    <Content Include="Theme\assets\img\120x120.jpg" />
+    <Content Include="Theme\assets\img\1280x857.jpg" />
+    <Content Include="Theme\assets\img\175x115.jpg" />
+    <Content Include="Theme\assets\img\200x200.jpg" />
+    <Content Include="Theme\assets\img\300x300.jpg" />
+    <Content Include="Theme\assets\img\350x250.jpg" />
+    <Content Include="Theme\assets\img\400x168.jpg" />
+    <Content Include="Theme\assets\img\400x300.jpg" />
+    <Content Include="Theme\assets\img\509x343.jpg" />
+    <Content Include="Theme\assets\img\600x300.jpg" />
+    <Content Include="Theme\assets\img\640x426.jpg" />
+    <Content Include="Theme\assets\img\90x90.jpg" />
+    <Content Include="Theme\assets\img\ab-1.jpeg" />
+    <Content Include="Theme\assets\img\arrow-down.png" />
+    <Content Include="Theme\assets\img\bg.png" />
+    <Content Include="Theme\assets\img\ca.png" />
+    <Content Include="Theme\assets\img\contact-us-map-pin.svg" />
+    <Content Include="Theme\assets\img\de.png" />
+    <Content Include="Theme\assets\img\faq.svg" />
+    <Content Include="Theme\assets\img\favicon.ico" />
+    <Content Include="Theme\assets\img\fr.png" />
+    <Content Include="Theme\assets\img\jp.png" />
+    <Content Include="Theme\assets\img\mindset.svg" />
+    <Content Include="Theme\assets\js\app.js" />
+    <Content Include="Theme\assets\js\apps\contact.js" />
+    <Content Include="Theme\assets\js\apps\custom-mailbox.js" />
+    <Content Include="Theme\assets\js\apps\invoice.js" />
+    <Content Include="Theme\assets\js\apps\mailbox-chat.js" />
+    <Content Include="Theme\assets\js\apps\notes.js" />
+    <Content Include="Theme\assets\js\apps\scrumboard.js" />
+    <Content Include="Theme\assets\js\apps\todoList.js" />
+    <Content Include="Theme\assets\js\authentication\form-1.js" />
+    <Content Include="Theme\assets\js\authentication\form-2.js" />
+    <Content Include="Theme\assets\js\clipboard\clipboard.min.js" />
+    <Content Include="Theme\assets\js\components\custom-carousel.js" />
+    <Content Include="Theme\assets\js\components\custom-countdown.js" />
+    <Content Include="Theme\assets\js\components\custom-counter.js" />
+    <Content Include="Theme\assets\js\components\notification\custom-snackbar.js" />
+    <Content Include="Theme\assets\js\components\session-timeout\bootstrap-session-timeout.js" />
+    <Content Include="Theme\assets\js\components\session-timeout\custom-bootstrap_session_timeout.js" />
+    <Content Include="Theme\assets\js\components\ui-accordions.js" />
+    <Content Include="Theme\assets\js\custom.js" />
+    <Content Include="Theme\assets\js\dashboard\dash_1.js" />
+    <Content Include="Theme\assets\js\dashboard\dash_2.js" />
+    <Content Include="Theme\assets\js\elements\custom-search.js" />
+    <Content Include="Theme\assets\js\elements\popovers.js" />
+    <Content Include="Theme\assets\js\elements\tooltip.js" />
+    <Content Include="Theme\assets\js\forms\bootstrap_validation\bs_validation_script.js" />
+    <Content Include="Theme\assets\js\forms\custom-clipboard.js" />
+    <Content Include="Theme\assets\js\ie11fix\fn.fix-padStart.js" />
+    <Content Include="Theme\assets\js\libs\jquery-3.1.1.min.js" />
+    <Content Include="Theme\assets\js\libs\jquery-ui.js" />
+    <Content Include="Theme\assets\js\loader.js" />
+    <Content Include="Theme\assets\js\pages\coming-soon\coming-soon.js" />
+    <Content Include="Theme\assets\js\pages\faq\faq.js" />
+    <Content Include="Theme\assets\js\pages\faq\faq2.js" />
+    <Content Include="Theme\assets\js\pages\helpdesk.js" />
+    <Content Include="Theme\assets\js\scrollspyNav.js" />
+    <Content Include="Theme\assets\js\users\account-settings.js" />
+    <Content Include="Theme\assets\js\widgets\modules-widgets.js" />
+    <Content Include="Theme\bootstrap\css\bootstrap.css" />
+    <Content Include="Theme\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Theme\bootstrap\js\bootstrap.js" />
+    <Content Include="Theme\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Theme\bootstrap\js\popper.min.js" />
+    <Content Include="Theme\plugins\animate\animate.css" />
+    <Content Include="Theme\plugins\apex\apexcharts.css" />
+    <Content Include="Theme\plugins\apex\apexcharts.min.js" />
+    <Content Include="Theme\plugins\apex\custom-apexcharts.js" />
+    <Content Include="Theme\plugins\autocomplete\autocomplete.css" />
+    <Content Include="Theme\plugins\autocomplete\countries.js" />
+    <Content Include="Theme\plugins\autocomplete\demo.js" />
+    <Content Include="Theme\plugins\autocomplete\jquery.autocomplete.js" />
+    <Content Include="Theme\plugins\autocomplete\jquery.mockjax.js" />
+    <Content Include="Theme\plugins\blockui\custom-blockui.js" />
+    <Content Include="Theme\plugins\blockui\jquery.blockUI.min.js" />
+    <Content Include="Theme\plugins\bootstrap-maxlength\bootstrap-maxlength.js" />
+    <Content Include="Theme\plugins\bootstrap-maxlength\custom-bs-maxlength.js" />
+    <Content Include="Theme\plugins\bootstrap-multiselect\bootstrap-multiselect.min.js" />
+    <Content Include="Theme\plugins\bootstrap-range-Slider\bootstrap-rangeSlider.js" />
+    <Content Include="Theme\plugins\bootstrap-range-Slider\bootstrap-slider.css" />
+    <Content Include="Theme\plugins\bootstrap-select\bootstrap-select.min.css" />
+    <Content Include="Theme\plugins\bootstrap-select\bootstrap-select.min.js" />
+    <Content Include="Theme\plugins\bootstrap-touchspin\custom-bootstrap-touchspin.js" />
+    <Content Include="Theme\plugins\bootstrap-touchspin\jquery.bootstrap-touchspin.min.css" />
+    <Content Include="Theme\plugins\bootstrap-touchspin\jquery.bootstrap-touchspin.min.js" />
+    <Content Include="Theme\plugins\countdown\jquery.countdown.min.js" />
+    <Content Include="Theme\plugins\counter\jquery.countTo.js" />
+    <Content Include="Theme\plugins\drag-and-drop\dragula\crossvent.js" />
+    <Content Include="Theme\plugins\drag-and-drop\dragula\crossvent.min.js" />
+    <Content Include="Theme\plugins\drag-and-drop\dragula\custom-dragula.js" />
+    <Content Include="Theme\plugins\drag-and-drop\dragula\dragula.css" />
+    <Content Include="Theme\plugins\drag-and-drop\dragula\dragula.js" />
+    <Content Include="Theme\plugins\drag-and-drop\dragula\dragula.min.js" />
+    <Content Include="Theme\plugins\drag-and-drop\dragula\example.css" />
+    <Content Include="Theme\plugins\dropify\dropify.min.css" />
+    <Content Include="Theme\plugins\dropify\dropify.min.js" />
+    <Content Include="Theme\plugins\dropify\fonts\dropify.svg" />
+    <Content Include="Theme\plugins\editors\markdown\custom-markdown.js" />
+    <Content Include="Theme\plugins\editors\markdown\simplemde.min.css" />
+    <Content Include="Theme\plugins\editors\markdown\simplemde.min.js" />
+    <Content Include="Theme\plugins\editors\quill\custom-quill.js" />
+    <Content Include="Theme\plugins\editors\quill\quill.bubble.css" />
+    <Content Include="Theme\plugins\editors\quill\quill.js" />
+    <Content Include="Theme\plugins\editors\quill\quill.snow.css" />
+    <Content Include="Theme\plugins\file-upload\file-upload-with-preview.min.css" />
+    <Content Include="Theme\plugins\file-upload\file-upload-with-preview.min.js" />
+    <Content Include="Theme\plugins\flatpickr\custom-flatpickr.css" />
+    <Content Include="Theme\plugins\flatpickr\custom-flatpickr.js" />
+    <Content Include="Theme\plugins\flatpickr\flatpickr.css" />
+    <Content Include="Theme\plugins\flatpickr\flatpickr.js" />
+    <Content Include="Theme\plugins\font-icons\feather\activity.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\airplay.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\alert-circle.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\alert-octagon.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\alert-triangle.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\align-center.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\align-justify.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\align-left.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\align-right.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\anchor.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\aperture.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\archive.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\arrow-down-circle.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\arrow-down-left.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\arrow-down-right.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\arrow-down.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\arrow-left-circle.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\arrow-left.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\arrow-right-circle.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\arrow-right.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\arrow-up-circle.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\arrow-up-left.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\arrow-up-right.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\arrow-up.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\at-sign.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\award.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\bar-chart-2.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\bar-chart.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\battery-charging.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\battery.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\bell-off.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\bell.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\bluetooth.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\bold.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\book-open.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\book.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\bookmark.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\box.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\briefcase.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\calendar.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\camera-off.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\camera.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\cast.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\check-circle.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\check-square.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\check.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\chevron-down.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\chevron-left.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\chevron-right.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\chevron-up.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\chevrons-down.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\chevrons-left.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\chevrons-right.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\chevrons-up.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\chrome.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\circle.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\clipboard.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\clock.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\cloud-drizzle.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\cloud-lightning.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\cloud-off.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\cloud-rain.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\cloud-snow.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\cloud.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\code.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\codepen.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\codesandbox.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\coffee.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\columns.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\command.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\compass.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\copy.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\corner-down-left.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\corner-down-right.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\corner-left-down.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\corner-left-up.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\corner-right-down.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\corner-right-up.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\corner-up-left.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\corner-up-right.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\cpu.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\credit-card.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\crop.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\crosshair.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\database.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\delete.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\disc.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\dollar-sign.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\download-cloud.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\download.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\droplet.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\edit-2.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\edit-3.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\edit.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\external-link.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\eye-off.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\eye.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\facebook.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\fast-forward.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\feather.min.js" />
+    <Content Include="Theme\plugins\font-icons\feather\feather.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\figma.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\file-minus.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\file-plus.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\file-text.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\file.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\film.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\filter.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\flag.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\folder-minus.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\folder-plus.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\folder.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\framer.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\frown.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\gift.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\git-branch.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\git-commit.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\git-merge.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\git-pull-request.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\github.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\gitlab.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\globe.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\grid.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\hard-drive.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\hash.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\headphones.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\heart.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\help-circle.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\hexagon.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\home.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\image.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\inbox.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\info.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\instagram.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\italic.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\key.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\layers.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\layout.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\life-buoy.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\link-2.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\link.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\linkedin.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\list.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\loader.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\lock.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\log-in.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\log-out.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\mail.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\map-pin.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\map.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\maximize-2.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\maximize.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\meh.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\menu.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\message-circle.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\message-square.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\mic-off.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\mic.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\minimize-2.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\minimize.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\minus-circle.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\minus-square.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\minus.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\monitor.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\moon.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\more-horizontal.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\more-vertical.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\mouse-pointer.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\move.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\music.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\navigation-2.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\navigation.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\octagon.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\package.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\paperclip.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\pause-circle.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\pause.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\pen-tool.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\percent.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\phone-call.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\phone-forwarded.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\phone-incoming.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\phone-missed.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\phone-off.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\phone-outgoing.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\phone.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\pie-chart.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\play-circle.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\play.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\plus-circle.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\plus-square.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\plus.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\pocket.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\power.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\printer.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\radio.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\refresh-ccw.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\refresh-cw.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\repeat.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\rewind.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\rotate-ccw.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\rotate-cw.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\rss.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\save.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\scissors.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\search.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\send.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\server.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\settings.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\share-2.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\share.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\shield-off.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\shield.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\shopping-bag.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\shopping-cart.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\shuffle.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\sidebar.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\skip-back.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\skip-forward.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\slack.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\slash.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\sliders.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\smartphone.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\smile.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\speaker.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\square.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\star.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\stop-circle.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\sun.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\sunrise.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\sunset.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\tablet.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\tag.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\target.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\terminal.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\thermometer.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\thumbs-down.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\thumbs-up.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\toggle-left.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\toggle-right.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\tool.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\trash-2.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\trash.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\trello.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\trending-down.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\trending-up.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\triangle.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\truck.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\tv.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\twitch.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\twitter.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\type.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\umbrella.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\underline.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\unlock.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\upload-cloud.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\upload.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\user-check.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\user-minus.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\user-plus.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\user-x.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\user.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\users.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\video-off.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\video.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\voicemail.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\volume-1.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\volume-2.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\volume-x.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\volume.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\watch.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\wifi-off.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\wifi.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\wind.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\x-circle.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\x-octagon.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\x-square.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\x.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\youtube.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\zap-off.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\zap.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\zoom-in.svg" />
+    <Content Include="Theme\plugins\font-icons\feather\zoom-out.svg" />
+    <Content Include="Theme\plugins\font-icons\fontawesome\css\fontawesome.css" />
+    <Content Include="Theme\plugins\font-icons\fontawesome\css\regular.css" />
+    <Content Include="Theme\plugins\font-icons\fontawesome\webfonts\fa-regular-400.svg" />
+    <Content Include="Theme\plugins\fullcalendar\custom-fullcalendar.advance.css" />
+    <Content Include="Theme\plugins\fullcalendar\custom-fullcalendar.advance.js" />
+    <Content Include="Theme\plugins\fullcalendar\fullcalendar.css" />
+    <Content Include="Theme\plugins\fullcalendar\fullcalendar.min.css" />
+    <Content Include="Theme\plugins\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Theme\plugins\fullcalendar\moment.min.js" />
+    <Content Include="Theme\plugins\highlight\highlight.pack.js" />
+    <Content Include="Theme\plugins\highlight\styles\a11y-dark.css" />
+    <Content Include="Theme\plugins\highlight\styles\a11y-light.css" />
+    <Content Include="Theme\plugins\highlight\styles\agate.css" />
+    <Content Include="Theme\plugins\highlight\styles\an-old-hope.css" />
+    <Content Include="Theme\plugins\highlight\styles\androidstudio.css" />
+    <Content Include="Theme\plugins\highlight\styles\arduino-light.css" />
+    <Content Include="Theme\plugins\highlight\styles\arta.css" />
+    <Content Include="Theme\plugins\highlight\styles\ascetic.css" />
+    <Content Include="Theme\plugins\highlight\styles\atelier-cave-dark.css" />
+    <Content Include="Theme\plugins\highlight\styles\atelier-cave-light.css" />
+    <Content Include="Theme\plugins\highlight\styles\atelier-dune-dark.css" />
+    <Content Include="Theme\plugins\highlight\styles\atelier-dune-light.css" />
+    <Content Include="Theme\plugins\highlight\styles\atelier-estuary-dark.css" />
+    <Content Include="Theme\plugins\highlight\styles\atelier-estuary-light.css" />
+    <Content Include="Theme\plugins\highlight\styles\atelier-forest-dark.css" />
+    <Content Include="Theme\plugins\highlight\styles\atelier-forest-light.css" />
+    <Content Include="Theme\plugins\highlight\styles\atelier-heath-dark.css" />
+    <Content Include="Theme\plugins\highlight\styles\atelier-heath-light.css" />
+    <Content Include="Theme\plugins\highlight\styles\atelier-lakeside-dark.css" />
+    <Content Include="Theme\plugins\highlight\styles\atelier-lakeside-light.css" />
+    <Content Include="Theme\plugins\highlight\styles\atelier-plateau-dark.css" />
+    <Content Include="Theme\plugins\highlight\styles\atelier-plateau-light.css" />
+    <Content Include="Theme\plugins\highlight\styles\atelier-savanna-dark.css" />
+    <Content Include="Theme\plugins\highlight\styles\atelier-savanna-light.css" />
+    <Content Include="Theme\plugins\highlight\styles\atelier-seaside-dark.css" />
+    <Content Include="Theme\plugins\highlight\styles\atelier-seaside-light.css" />
+    <Content Include="Theme\plugins\highlight\styles\atelier-sulphurpool-dark.css" />
+    <Content Include="Theme\plugins\highlight\styles\atelier-sulphurpool-light.css" />
+    <Content Include="Theme\plugins\highlight\styles\atom-one-dark-reasonable.css" />
+    <Content Include="Theme\plugins\highlight\styles\atom-one-dark.css" />
+    <Content Include="Theme\plugins\highlight\styles\atom-one-light.css" />
+    <Content Include="Theme\plugins\highlight\styles\brown-paper.css" />
+    <Content Include="Theme\plugins\highlight\styles\brown-papersq.png" />
+    <Content Include="Theme\plugins\highlight\styles\codepen-embed.css" />
+    <Content Include="Theme\plugins\highlight\styles\color-brewer.css" />
+    <Content Include="Theme\plugins\highlight\styles\darcula.css" />
+    <Content Include="Theme\plugins\highlight\styles\dark.css" />
+    <Content Include="Theme\plugins\highlight\styles\darkula.css" />
+    <Content Include="Theme\plugins\highlight\styles\default.css" />
+    <Content Include="Theme\plugins\highlight\styles\docco.css" />
+    <Content Include="Theme\plugins\highlight\styles\dracula.css" />
+    <Content Include="Theme\plugins\highlight\styles\far.css" />
+    <Content Include="Theme\plugins\highlight\styles\foundation.css" />
+    <Content Include="Theme\plugins\highlight\styles\github-gist.css" />
+    <Content Include="Theme\plugins\highlight\styles\github.css" />
+    <Content Include="Theme\plugins\highlight\styles\gml.css" />
+    <Content Include="Theme\plugins\highlight\styles\googlecode.css" />
+    <Content Include="Theme\plugins\highlight\styles\grayscale.css" />
+    <Content Include="Theme\plugins\highlight\styles\gruvbox-dark.css" />
+    <Content Include="Theme\plugins\highlight\styles\gruvbox-light.css" />
+    <Content Include="Theme\plugins\highlight\styles\hopscotch.css" />
+    <Content Include="Theme\plugins\highlight\styles\hybrid.css" />
+    <Content Include="Theme\plugins\highlight\styles\idea.css" />
+    <Content Include="Theme\plugins\highlight\styles\ir-black.css" />
+    <Content Include="Theme\plugins\highlight\styles\isbl-editor-dark.css" />
+    <Content Include="Theme\plugins\highlight\styles\isbl-editor-light.css" />
+    <Content Include="Theme\plugins\highlight\styles\kimbie.dark.css" />
+    <Content Include="Theme\plugins\highlight\styles\kimbie.light.css" />
+    <Content Include="Theme\plugins\highlight\styles\lightfair.css" />
+    <Content Include="Theme\plugins\highlight\styles\magula.css" />
+    <Content Include="Theme\plugins\highlight\styles\mono-blue.css" />
+    <Content Include="Theme\plugins\highlight\styles\monokai-sublime.css" />
+    <Content Include="Theme\plugins\highlight\styles\monokai.css" />
+    <Content Include="Theme\plugins\highlight\styles\nord.css" />
+    <Content Include="Theme\plugins\highlight\styles\obsidian.css" />
+    <Content Include="Theme\plugins\highlight\styles\ocean.css" />
+    <Content Include="Theme\plugins\highlight\styles\paraiso-dark.css" />
+    <Content Include="Theme\plugins\highlight\styles\paraiso-light.css" />
+    <Content Include="Theme\plugins\highlight\styles\pojoaque.css" />
+    <Content Include="Theme\plugins\highlight\styles\pojoaque.jpg" />
+    <Content Include="Theme\plugins\highlight\styles\purebasic.css" />
+    <Content Include="Theme\plugins\highlight\styles\qtcreator_dark.css" />
+    <Content Include="Theme\plugins\highlight\styles\qtcreator_light.css" />
+    <Content Include="Theme\plugins\highlight\styles\railscasts.css" />
+    <Content Include="Theme\plugins\highlight\styles\rainbow.css" />
+    <Content Include="Theme\plugins\highlight\styles\routeros.css" />
+    <Content Include="Theme\plugins\highlight\styles\school-book.css" />
+    <Content Include="Theme\plugins\highlight\styles\school-book.png" />
+    <Content Include="Theme\plugins\highlight\styles\shades-of-purple.css" />
+    <Content Include="Theme\plugins\highlight\styles\solarized-dark.css" />
+    <Content Include="Theme\plugins\highlight\styles\solarized-light.css" />
+    <Content Include="Theme\plugins\highlight\styles\sunburst.css" />
+    <Content Include="Theme\plugins\highlight\styles\tomorrow-night-blue.css" />
+    <Content Include="Theme\plugins\highlight\styles\tomorrow-night-bright.css" />
+    <Content Include="Theme\plugins\highlight\styles\tomorrow-night-eighties.css" />
+    <Content Include="Theme\plugins\highlight\styles\tomorrow-night.css" />
+    <Content Include="Theme\plugins\highlight\styles\tomorrow.css" />
+    <Content Include="Theme\plugins\highlight\styles\vs.css" />
+    <Content Include="Theme\plugins\highlight\styles\vs2015.css" />
+    <Content Include="Theme\plugins\highlight\styles\xcode.css" />
+    <Content Include="Theme\plugins\highlight\styles\xt256.css" />
+    <Content Include="Theme\plugins\highlight\styles\zenburn.css" />
+    <Content Include="Theme\plugins\input-mask\input-mask.js" />
+    <Content Include="Theme\plugins\input-mask\jquery.inputmask.bundle.min.js" />
+    <Content Include="Theme\plugins\input-mask\phone-codes\phone-be.min.js" />
+    <Content Include="Theme\plugins\input-mask\phone-codes\phone-ca.min.js" />
+    <Content Include="Theme\plugins\input-mask\phone-codes\phone-hu.min.js" />
+    <Content Include="Theme\plugins\input-mask\phone-codes\phone-it.min.js" />
+    <Content Include="Theme\plugins\input-mask\phone-codes\phone-mx.min.js" />
+    <Content Include="Theme\plugins\input-mask\phone-codes\phone-nl.min.js" />
+    <Content Include="Theme\plugins\input-mask\phone-codes\phone-ru.min.js" />
+    <Content Include="Theme\plugins\input-mask\phone-codes\phone.min.js" />
+    <Content Include="Theme\plugins\jquery-step\custom-jquery.steps.js" />
+    <Content Include="Theme\plugins\jquery-step\jquery.steps.css" />
+    <Content Include="Theme\plugins\jquery-step\jquery.steps.min.js" />
+    <Content Include="Theme\plugins\jquery-ui\images\ui-icons_444444_256x240.png" />
+    <Content Include="Theme\plugins\jquery-ui\images\ui-icons_555555_256x240.png" />
+    <Content Include="Theme\plugins\jquery-ui\images\ui-icons_777620_256x240.png" />
+    <Content Include="Theme\plugins\jquery-ui\images\ui-icons_777777_256x240.png" />
+    <Content Include="Theme\plugins\jquery-ui\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Theme\plugins\jquery-ui\images\ui-icons_cccccc_256x240.png" />
+    <Content Include="Theme\plugins\jquery-ui\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Theme\plugins\jquery-ui\jquery-ui.min.css" />
+    <Content Include="Theme\plugins\jquery-ui\jquery-ui.min.js" />
+    <Content Include="Theme\plugins\jvector\africa\jquery-jvectormap-africa-en.js" />
+    <Content Include="Theme\plugins\jvector\asia\jquery-jvectormap-asia-en.js" />
+    <Content Include="Theme\plugins\jvector\continents\jquery-jvectormap-continents-en.js" />
+    <Content Include="Theme\plugins\jvector\europe\jquery-jvectormap-europe-en.js" />
+    <Content Include="Theme\plugins\jvector\jquery-jvectormap-2.0.3.css" />
+    <Content Include="Theme\plugins\jvector\jquery-jvectormap-2.0.3.min.js" />
+    <Content Include="Theme\plugins\jvector\jvector_script.js" />
+    <Content Include="Theme\plugins\jvector\north_america\jquery-jvectormap-north-america-en.js" />
+    <Content Include="Theme\plugins\jvector\oceania\jquery-jvectormap-oceanina-en.js" />
+    <Content Include="Theme\plugins\jvector\south-america\jquery-jvectormap-south-america-en.js" />
+    <Content Include="Theme\plugins\jvector\worldmap_script\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="Theme\plugins\lightbox\custom-photswipe.css" />
+    <Content Include="Theme\plugins\lightbox\custom-photswipe.js" />
+    <Content Include="Theme\plugins\lightbox\default-skin\default-skin.css" />
+    <Content Include="Theme\plugins\lightbox\default-skin\default-skin.png" />
+    <Content Include="Theme\plugins\lightbox\default-skin\default-skin.svg" />
+    <Content Include="Theme\plugins\lightbox\default-skin\preloader.gif" />
+    <Content Include="Theme\plugins\lightbox\photoswipe-ui-default.js" />
+    <Content Include="Theme\plugins\lightbox\photoswipe-ui-default.min.js" />
+    <Content Include="Theme\plugins\lightbox\photoswipe.css" />
+    <Content Include="Theme\plugins\lightbox\photoswipe.js" />
+    <Content Include="Theme\plugins\lightbox\photoswipe.min.js" />
+    <Content Include="Theme\plugins\loaders\custom-loader.css" />
+    <Content Include="Theme\plugins\notification\snackbar\snackbar.min.css" />
+    <Content Include="Theme\plugins\notification\snackbar\snackbar.min.js" />
+    <Content Include="Theme\plugins\noUiSlider\custom-nouiSlider.css" />
+    <Content Include="Theme\plugins\noUiSlider\custom-nouiSlider.js" />
+    <Content Include="Theme\plugins\noUiSlider\nouislider.min.css" />
+    <Content Include="Theme\plugins\noUiSlider\nouislider.min.js" />
+    <Content Include="Theme\plugins\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="Theme\plugins\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="Theme\plugins\pricing-table\css\component.css" />
+    <Content Include="Theme\plugins\select2\custom-select2.js" />
+    <Content Include="Theme\plugins\select2\select2-spinner.gif" />
+    <Content Include="Theme\plugins\select2\select2.min.css" />
+    <Content Include="Theme\plugins\select2\select2.min.js" />
+    <Content Include="Theme\plugins\select2\select2.png" />
+    <Content Include="Theme\plugins\select2\select2x2.png" />
+    <Content Include="Theme\plugins\sweetalerts\custom-sweetalert.js" />
+    <Content Include="Theme\plugins\sweetalerts\promise-polyfill.js" />
+    <Content Include="Theme\plugins\sweetalerts\sweetalert.css" />
+    <Content Include="Theme\plugins\sweetalerts\sweetalert.js" />
+    <Content Include="Theme\plugins\sweetalerts\sweetalert2.min.css" />
+    <Content Include="Theme\plugins\sweetalerts\sweetalert2.min.js" />
+    <Content Include="Theme\plugins\table\datatable\button-ext\buttons.html5.min.js" />
+    <Content Include="Theme\plugins\table\datatable\button-ext\buttons.print.min.js" />
+    <Content Include="Theme\plugins\table\datatable\button-ext\dataTables.buttons.min.js" />
+    <Content Include="Theme\plugins\table\datatable\button-ext\jszip.min.js" />
+    <Content Include="Theme\plugins\table\datatable\custom_dt_custom.css" />
+    <Content Include="Theme\plugins\table\datatable\custom_dt_html5.css" />
+    <Content Include="Theme\plugins\table\datatable\custom_dt_miscellaneous.css" />
+    <Content Include="Theme\plugins\table\datatable\custom_dt_multiple_tables.css" />
+    <Content Include="Theme\plugins\table\datatable\custom_miscellaneous.js" />
+    <Content Include="Theme\plugins\table\datatable\datatables-dark.css" />
+    <Content Include="Theme\plugins\table\datatable\datatables.css" />
+    <Content Include="Theme\plugins\table\datatable\datatables.js" />
+    <Content Include="Theme\plugins\table\datatable\dt-custom-setting.js" />
+    <Content Include="Theme\plugins\table\datatable\dt-global_style-dark.css" />
+    <Content Include="Theme\plugins\table\datatable\dt-global_style.css" />
+    <Content Include="Theme\plugins\tagInput\tags-input.css" />
+    <Content Include="Theme\plugins\tagInput\tags-input.js" />
+    <Content Include="Theme\plugins\treeview\custom-jstree.js" />
+    <Content Include="Uploads\CompanyLogos\NoImage.jpeg" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\ABilling\Data\" />
+    <Folder Include="Areas\ABilling\Views\Shared\" />
+    <Folder Include="Areas\AUsers\Data\" />
+    <Folder Include="Areas\AUsers\Views\Shared\" />
+    <Folder Include="Reports\" />
+    <Folder Include="Views\AReports\" />
+    <Folder Include="Views\MarkUp\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Buttons-2.3.4\css\common.scss" />
+    <Content Include="Buttons-2.3.4\css\mixins.scss" />
+    <Content Include="bin\office360.dll.config" />
+    <Content Include="bin\roslyn\csc.exe.config" />
+    <Content Include="bin\roslyn\csc.rsp" />
+    <Content Include="bin\roslyn\csi.exe.config" />
+    <Content Include="bin\roslyn\csi.rsp" />
+    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.Managed.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="bin\roslyn\vbc.exe.config" />
+    <Content Include="bin\roslyn\vbc.rsp" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </Content>
+    <Content Include="ExcelFiles\BulkPatient.xlsx" />
+    <Content Include="ExcelFiles\EmployeeBulkUpload.xlsx" />
+    <Content Include="ExcelFiles\Branches_ExcelUpload.xlsx" />
+    <Content Include="Areas\AUsers\Views\web.config" />
+    <Content Include="Areas\AUsers\Views\Authentication\LogIn_FE.cshtml" />
+    <Content Include="Areas\AUsers\Views\Authentication\GetDashBoard_ADMIN.cshtml" />
+    <Content Include="Areas\ABilling\Views\web.config" />
+    <Content Include="Areas\ABilling\Views\VendorUI\NewVendor_FE.cshtml" />
+    <None Include="Dockerfile" />
+    <None Include=".dockerignore">
+      <DependentUpon>Dockerfile</DependentUpon>
+    </None>
+    <EntityDeploy Include="Models\EDMX\SESModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SESModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\EDMX\SESModel.edmx.diagram">
+      <DependentUpon>SESModel.edmx</DependentUpon>
+    </Content>
+    <None Include="packages.config" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Views\Shared\_LogInLayOut.cshtml" />
+    <Content Include="Theme\plugins\dropify\fonts\dropify.eot" />
+    <Content Include="Theme\plugins\dropify\fonts\dropify.ttf" />
+    <Content Include="Theme\plugins\dropify\fonts\dropify.woff" />
+    <Content Include="Theme\plugins\font-icons\fontawesome\webfonts\fa-regular-400.eot" />
+    <Content Include="Theme\plugins\font-icons\fontawesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="Theme\plugins\font-icons\fontawesome\webfonts\fa-regular-400.woff" />
+    <Content Include="Theme\plugins\font-icons\fontawesome\webfonts\fa-regular-400.woff2" />
+    <Content Include="Theme\sass\assets\apps\contacts.scss" />
+    <Content Include="Theme\sass\assets\apps\invoice.scss" />
+    <Content Include="Theme\sass\assets\apps\mailbox.scss" />
+    <Content Include="Theme\sass\assets\apps\mailing-chat.scss" />
+    <Content Include="Theme\sass\assets\apps\notes.scss" />
+    <Content Include="Theme\sass\assets\apps\scrumboard.scss" />
+    <Content Include="Theme\sass\assets\apps\todolist.scss" />
+    <Content Include="Theme\sass\assets\authentication\form-1.scss" />
+    <Content Include="Theme\sass\assets\authentication\form-2.scss" />
+    <Content Include="Theme\sass\assets\components\cards\card.scss" />
+    <Content Include="Theme\sass\assets\components\cards\_card\_card-1.scss" />
+    <Content Include="Theme\sass\assets\components\cards\_card\_card-2.scss" />
+    <Content Include="Theme\sass\assets\components\cards\_card\_card-3.scss" />
+    <Content Include="Theme\sass\assets\components\cards\_card\_card-4.scss" />
+    <Content Include="Theme\sass\assets\components\cards\_card\_card-5.scss" />
+    <Content Include="Theme\sass\assets\components\cards\_card\_card-6.scss" />
+    <Content Include="Theme\sass\assets\components\cards\_card\_card-7.scss" />
+    <Content Include="Theme\sass\assets\components\cards\_card\_card-8.scss" />
+    <Content Include="Theme\sass\assets\components\cards\_card\_card-9.scss" />
+    <Content Include="Theme\sass\assets\components\cards\_card\_media-query.scss" />
+    <Content Include="Theme\sass\assets\components\custom-carousel.scss" />
+    <Content Include="Theme\sass\assets\components\custom-countdown.scss" />
+    <Content Include="Theme\sass\assets\components\custom-counter.scss" />
+    <Content Include="Theme\sass\assets\components\custom-list-group.scss" />
+    <Content Include="Theme\sass\assets\components\custom-media_object.scss" />
+    <Content Include="Theme\sass\assets\components\custom-modal.scss" />
+    <Content Include="Theme\sass\assets\components\custom-sweetalert.scss" />
+    <Content Include="Theme\sass\assets\components\tabs-accordian\custom-accordions.scss" />
+    <Content Include="Theme\sass\assets\components\tabs-accordian\custom-tabs.scss" />
+    <Content Include="Theme\sass\assets\components\timeline\custom-timeline.scss" />
+    <Content Include="Theme\sass\assets\components\timeline\_timeline\_timeline-alter.scss" />
+    <Content Include="Theme\sass\assets\components\timeline\_timeline\_timeline-basic.scss" />
+    <Content Include="Theme\sass\assets\components\timeline\_timeline\_timeline-modern.scss" />
+    <Content Include="Theme\sass\assets\components\timeline\_timeline\_timeline-profile.scss" />
+    <Content Include="Theme\sass\assets\elements\alert.scss" />
+    <Content Include="Theme\sass\assets\elements\avatar.scss" />
+    <Content Include="Theme\sass\assets\elements\breadcrumb.scss" />
+    <Content Include="Theme\sass\assets\elements\custom-pagination.scss" />
+    <Content Include="Theme\sass\assets\elements\custom-tree_view.scss" />
+    <Content Include="Theme\sass\assets\elements\infobox.scss" />
+    <Content Include="Theme\sass\assets\elements\miscellaneous.scss" />
+    <Content Include="Theme\sass\assets\elements\popover.scss" />
+    <Content Include="Theme\sass\assets\elements\search.scss" />
+    <Content Include="Theme\sass\assets\elements\tooltip.scss" />
+    <Content Include="Theme\sass\assets\elements\_infobox\_infobox-1.scss" />
+    <Content Include="Theme\sass\assets\elements\_infobox\_infobox-2.scss" />
+    <Content Include="Theme\sass\assets\elements\_infobox\_infobox-3.scss" />
+    <Content Include="Theme\sass\assets\forms\bootstrap-form.scss" />
+    <Content Include="Theme\sass\assets\forms\custom-clipboard.scss" />
+    <Content Include="Theme\sass\assets\forms\switches.scss" />
+    <Content Include="Theme\sass\assets\forms\theme-checkbox-radio.scss" />
+    <Content Include="Theme\sass\assets\loader.scss" />
+    <Content Include="Theme\sass\assets\main.scss" />
+    <Content Include="Theme\sass\assets\pages\coming-soon\style.scss" />
+    <Content Include="Theme\sass\assets\pages\contact_us.scss" />
+    <Content Include="Theme\sass\assets\pages\error\style-400.scss" />
+    <Content Include="Theme\sass\assets\pages\error\style-500.scss" />
+    <Content Include="Theme\sass\assets\pages\error\style-503.scss" />
+    <Content Include="Theme\sass\assets\pages\error\style-maintanence.scss" />
+    <Content Include="Theme\sass\assets\pages\faq\faq.scss" />
+    <Content Include="Theme\sass\assets\pages\faq\faq2.scss" />
+    <Content Include="Theme\sass\assets\pages\helpdesk.scss" />
+    <Content Include="Theme\sass\assets\pages\privacy\privacy.scss" />
+    <Content Include="Theme\sass\assets\scrollspyNav.scss" />
+    <Content Include="Theme\sass\assets\structure.scss" />
+    <Content Include="Theme\sass\assets\tables\table-basic.scss" />
+    <Content Include="Theme\sass\assets\users\account-setting.scss" />
+    <Content Include="Theme\sass\assets\users\user-profile.scss" />
+    <Content Include="Theme\sass\assets\widgets\modules-widgets.scss" />
+    <Content Include="Theme\sass\assets\widgets\_modules-widgets\_modules-widget-account-invoice-one.scss" />
+    <Content Include="Theme\sass\assets\widgets\_modules-widgets\_modules-widget-account-invoice-two.scss" />
+    <Content Include="Theme\sass\assets\widgets\_modules-widgets\_modules-widget-activity-four.scss" />
+    <Content Include="Theme\sass\assets\widgets\_modules-widgets\_modules-widget-activity-one.scss" />
+    <Content Include="Theme\sass\assets\widgets\_modules-widgets\_modules-widget-activity-three.scss" />
+    <Content Include="Theme\sass\assets\widgets\_modules-widgets\_modules-widget-activity-two.scss" />
+    <Content Include="Theme\sass\assets\widgets\_modules-widgets\_modules-widget-card-four.scss" />
+    <Content Include="Theme\sass\assets\widgets\_modules-widgets\_modules-widget-card-one.scss" />
+    <Content Include="Theme\sass\assets\widgets\_modules-widgets\_modules-widget-card-two.scss" />
+    <Content Include="Theme\sass\assets\widgets\_modules-widgets\_modules-widget-chart-one.scss" />
+    <Content Include="Theme\sass\assets\widgets\_modules-widgets\_modules-widget-chart-three.scss" />
+    <Content Include="Theme\sass\assets\widgets\_modules-widgets\_modules-widget-chart-two.scss" />
+    <Content Include="Theme\sass\assets\widgets\_modules-widgets\_modules-widget-five.scss" />
+    <Content Include="Theme\sass\assets\widgets\_modules-widgets\_modules-widget-four.scss" />
+    <Content Include="Theme\sass\assets\widgets\_modules-widgets\_modules-widget-one.scss" />
+    <Content Include="Theme\sass\assets\widgets\_modules-widgets\_modules-widget-one_hybrid.scss" />
+    <Content Include="Theme\sass\assets\widgets\_modules-widgets\_modules-widget-table-one.scss" />
+    <Content Include="Theme\sass\assets\widgets\_modules-widgets\_modules-widget-table-three.scss" />
+    <Content Include="Theme\sass\assets\widgets\_modules-widgets\_modules-widget-table-two.scss" />
+    <Content Include="Theme\sass\assets\widgets\_modules-widgets\_modules-widget-three.scss" />
+    <Content Include="Theme\sass\assets\widgets\_modules-widgets\_modules-widget-two.scss" />
+    <Content Include="Theme\sass\assets\widgets\_modules-widgets\_modules-widgets-media-query.scss" />
+    <Content Include="Theme\sass\assets\_structure\_footer.scss" />
+    <Content Include="Theme\sass\assets\_structure\_media-query.scss" />
+    <Content Include="Theme\sass\assets\_structure\_navbar.scss" />
+    <Content Include="Theme\sass\assets\_structure\_sidebar.scss" />
+    <Content Include="Theme\sass\base\_base.scss" />
+    <Content Include="Theme\sass\base\_color_variables.scss" />
+    <Content Include="Theme\sass\base\_functions.scss" />
+    <Content Include="Theme\sass\base\_mixins.scss" />
+    <Content Include="Theme\sass\base\_utilities.scss" />
+    <Content Include="Theme\sass\plugins\animate\animate.scss" />
+    <Content Include="Theme\sass\plugins\autocomplete\autocomplete.scss" />
+    <Content Include="Theme\sass\plugins\bootstrap-range-Slider\bootstrap-slider.scss" />
+    <Content Include="Theme\sass\plugins\bootstrap-select\bootstrap-select.min.scss" />
+    <Content Include="Theme\sass\plugins\bootstrap-touchspin\jquery.bootstrap-touchspin.min.scss" />
+    <Content Include="Theme\sass\plugins\drag-and-drop\dragula\dragula.scss" />
+    <Content Include="Theme\sass\plugins\drag-and-drop\dragula\example.scss" />
+    <Content Include="Theme\sass\plugins\dropify\dropify.min.scss" />
+    <Content Include="Theme\sass\plugins\editors\markdown\simplemde.min.scss" />
+    <Content Include="Theme\sass\plugins\editors\quill\quill.bubble.scss" />
+    <Content Include="Theme\sass\plugins\editors\quill\quill.snow.scss" />
+    <Content Include="Theme\sass\plugins\file-upload\file-upload-with-preview.min.scss" />
+    <Content Include="Theme\sass\plugins\flatpickr\custom-flatpickr.scss" />
+    <Content Include="Theme\sass\plugins\fullcalendar\custom-fullcalendar.advance.scss" />
+    <Content Include="Theme\sass\plugins\fullcalendar\fullcalendar.min.scss" />
+    <Content Include="Theme\sass\plugins\fullcalendar\fullcalendar.scss" />
+    <Content Include="Theme\sass\plugins\jquery-step\jquery.steps.scss" />
+    <Content Include="Theme\sass\plugins\jvector\jquery-jvectormap-2.0.3.scss" />
+    <Content Include="Theme\sass\plugins\lightbox\custom-photswipe.scss" />
+    <Content Include="Theme\sass\plugins\lightbox\photoswipe.scss" />
+    <Content Include="Theme\sass\plugins\loaders\custom-loader.scss" />
+    <Content Include="Theme\sass\plugins\noUiSlider\custom-nouiSlider.scss" />
+    <Content Include="Theme\sass\plugins\perfect-scrollbar\perfect-scrollbar.scss" />
+    <Content Include="Theme\sass\plugins\pricing-table\css\component.scss" />
+    <Content Include="Theme\sass\plugins\pricing-table\css\_pricing-table\_pricing-table-animated.scss" />
+    <Content Include="Theme\sass\plugins\pricing-table\css\_pricing-table\_pricing-table-basic.scss" />
+    <Content Include="Theme\sass\plugins\pricing-table\css\_pricing-table\_pricing-table-toggle.scss" />
+    <Content Include="Theme\sass\plugins\select2\select2.min.scss" />
+    <Content Include="Theme\sass\plugins\sweetalerts\sweetalert.scss" />
+    <Content Include="Theme\sass\plugins\sweetalerts\sweetalert2.min.scss" />
+    <Content Include="Theme\sass\plugins\table\datatable\custom_dt_custom.scss" />
+    <Content Include="Theme\sass\plugins\table\datatable\custom_dt_html5.scss" />
+    <Content Include="Theme\sass\plugins\table\datatable\custom_dt_miscellaneous.scss" />
+    <Content Include="Theme\sass\plugins\table\datatable\custom_dt_multiple_tables.scss" />
+    <Content Include="Theme\sass\plugins\table\datatable\datatables-dark.scss" />
+    <Content Include="Theme\sass\plugins\table\datatable\datatables.scss" />
+    <Content Include="Theme\sass\plugins\table\datatable\dt-global_style-dark.scss" />
+    <Content Include="Theme\sass\plugins\table\datatable\dt-global_style.scss" />
+    <Content Include="Theme\sass\plugins\tagInput\tags-input.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50704</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44368/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Grpc.Core.2.46.6\build\net45\Grpc.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Grpc.Core.2.46.6\build\net45\Grpc.Core.targets'))" />
+  </Target>
+  <Import Project="..\packages\Grpc.Core.2.46.6\build\net45\Grpc.Core.targets" Condition="Exists('..\packages\Grpc.Core.2.46.6\build\net45\Grpc.Core.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

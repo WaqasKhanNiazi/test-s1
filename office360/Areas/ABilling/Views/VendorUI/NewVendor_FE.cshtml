@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "Create New Vendor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="card-header">
+        @ViewBag.Title
+    </div>
+    <div class="container" style="margin-top: 20px">
+        <div class="row">
+            <div class="col-sm-9">
+                <div class="form-group row">
+                    @Html.Label("Vendor Id", new { @class = "col-sm-3 col-form-label", @for = "TextBoxVendorId" })
+                    <div class="col-md-9 col-8 selects-contant col-sm-9">
+                        <div class="col-sm-12 d-flex">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fa fa-university sm-icon" style="display: inline-block;"></i>
+                                </span>
+                            </div>
+                            @Html.TextBox("TextBoxVendorId", null, new { @class = "form-control TextBox", placeholder = "Please Enter Vendor Id Here!", @id = "TextBoxVendorId" })
+                        </div>
+                    </div>
+                </div>
+            </div> <div class="col-sm-9">
+                <div class="form-group row">
+                    @Html.Label("Vendor Code", new { @class = "col-sm-3 col-form-label", @for = "TextBoxVendorCode" })
+                    <div class="col-md-9 col-8 selects-contant col-sm-9">
+                        <div class="col-sm-12 d-flex">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fa fa-university sm-icon" style="display: inline-block;"></i>
+                                </span>
+                            </div>
+                            @Html.TextBox("TextBoxVendorCode", null, new { @class = "form-control TextBox", placeholder = "Please Enter Vendor Code Here!", @id = "TextBoxVendorCode" })
+                        </div>
+                    </div>
+                </div>
+            </div> <div class="col-sm-9">
+                <div class="form-group row">
+                    @Html.Label("Vendor Name", new { @class = "col-sm-3 col-form-label", @for = "TextBoxVendorTitle" })
+                    <div class="col-md-9 col-8 selects-contant col-sm-9">
+                        <div class="col-sm-12 d-flex">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fa fa-university sm-icon" style="display: inline-block;"></i>
+                                </span>
+                            </div>
+                            @Html.TextBox("TextBoxVendorTitle", null, new { @class = "form-control TextBox", placeholder = "Please Enter Vendor Name Here!", @id = "TextBoxVendorTitle" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-sm-12 form-group" id="DivButtonSave">
+        <div class="card-header">
+            <div class="card-heading">
+                <input type="button" class="btn btn-info" id="ButtonSubmitDown" value="Sumbit" />
+                <i class="fa fa-arrow-up"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 form-group" id="DivButtonUpdate" style="display:none">
+        <div class="card-header">
+            <div class="card-heading">
+                <input type="button" class="btn btn-info" id="ButtonUpdateDown" value="Update" />
+                <i class="fa fa-arrow-up"></i>
+            </div>
+        </div>
+    </div>
+}
+
+
+<div class="table-responsive mb-4 mt-4">
+    <table id="zero-config" class="table table-hover" style="width:100%">
+    </table>
+</div>
+<script src="~/Areas/ABilling/NewVendor_FE.js"></script>
