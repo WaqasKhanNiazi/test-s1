@@ -30,6 +30,11 @@ namespace REP.Controllers
         {
             return View();
         }
+
+        public ActionResult Test()
+        {
+            return View();
+        }
         public ActionResult Logout()
         {
             Session.Abandon();
